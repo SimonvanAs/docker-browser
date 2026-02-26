@@ -4,9 +4,23 @@ A Docker container that runs Chromium in a virtual display, accessible through y
 
 ## Quick Start
 
+### Using Docker Compose
+
+```bash
+docker compose up -d
+```
+
+### Using Docker directly
+
 ```bash
 docker build -t docker-browser .
 docker run -p 6080:6080 docker-browser
+```
+
+### Using the pre-built image
+
+```bash
+docker run -p 6080:6080 slompies/docker-browser:latest
 ```
 
 Open http://localhost:6080/vnc.html to access the browser.
