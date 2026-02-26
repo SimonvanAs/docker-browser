@@ -23,11 +23,11 @@ docker run -p 6080:6080 docker-browser
 docker run -p 6080:6080 slompies/docker-browser:latest
 ```
 
-Open http://localhost:6080/vnc.html to access the browser.
+Open http://localhost:6080 to access the browser.
 
 ## How It Works
 
-- **Xvfb** provides a virtual framebuffer (1920x1080)
+- **Xvfb** provides a virtual framebuffer (1280x720)
 - **Openbox** runs as a minimal window manager
 - **Chromium** launches maximized in the virtual display
 - **x11vnc** exposes the display over VNC
