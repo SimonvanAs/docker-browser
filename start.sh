@@ -14,8 +14,8 @@ chromium-browser \
   --no-sandbox \
   --disable-dev-shm-usage \
   --disable-gpu \
-  --window-size=1920,1080 \
-  --start-maximized &
+  --kiosk \
+  --window-size=1920,1080 &
 
 # Start VNC server
 x11vnc -display :0 -forever -nopw -shared -rfbport 5900 &

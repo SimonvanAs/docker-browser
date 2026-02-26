@@ -14,6 +14,8 @@ RUN apk add --no-cache \
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
+COPY index.html /usr/share/novnc/index.html
+COPY openbox-rc.xml /etc/xdg/openbox/rc.xml
 
 USER browser
 EXPOSE 6080
