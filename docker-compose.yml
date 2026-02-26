@@ -1,0 +1,6 @@
+services:
+  browser:
+    image: slompies/docker-browser:latest
+    ports:
+      - "6080:6080"
+    restart: unless-stopped
