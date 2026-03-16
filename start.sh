@@ -6,14 +6,23 @@ sleep 1
 
 export DISPLAY=:0
 
+# Start dbus if possible
+if [ -w /var/run/dbus ] || mkdir -p /var/run/dbus 2>/dev/null; then
+  dbus-daemon --system --nofork 2>/dev/null &
+  sleep 0.5
+fi
+
 # Start window manager
 openbox &
 
 # Start Chromium
-chromium-browser \
+GALLIUM_DRIVER=llvmpipe chromium-browser \
   --no-sandbox \
   --disable-dev-shm-usage \
   --disable-gpu \
+  --disable-software-rasterizer \
+  --disable-gpu-compositing \
+  --ozone-platform=x11 \
   --no-first-run \
   --disable-sync \
   --disable-infobars \
