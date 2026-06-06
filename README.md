@@ -37,4 +37,4 @@ Open http://localhost:6080 to access the browser.
 
 The container exposes port **6080** (noVNC web interface). The VNC server runs without a password by default.
 
-Built on Alpine 3.21 and runs as a non-root `browser` user.
+Built on Alpine 3.23 and runs as a non-root `browser` user.
