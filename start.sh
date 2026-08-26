@@ -15,6 +15,11 @@ alive() {
   [ -n "$state" ] && [ "$state" != "Z" ]
 }
 
+# Clean up stale X artifacts left by an unclean shutdown (hard container kill);
+# a leftover lock makes Xvfb exit with "Server is already active for display 0",
+# and a stale socket would satisfy the readiness check below with no server behind it.
+rm -f /tmp/.X0-lock /tmp/.X11-unix/X0
+
 Xvfb :0 -screen 0 1280x720x24 &
 XVFB_PID=$!
 
